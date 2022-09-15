@@ -1,0 +1,29 @@
+{
+  "name": "localstack-lambda",
+  "version": "1.0.0",
+  "description": "## Run Go Lambda locally with LocalStack and Serverless Framework",
+  "main": "index.js",
+  "scripts": {
+    "build": "sh build.sh",
+    "deploy:local": "serverless deploy --stage local",
+    "start": "npm run build && npm run deploy:local",
+    "watch": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elad-da/localstack-lambda.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elad-da/localstack-lambda/issues"
+  },
+  "homepage": "https://github.com/elad-da/localstack-lambda#readme",
+  "devDependencies": {
+    "concurrently": "^6.5.1",
+    "nodemon": "^2.0.19",
+    "serverless": "^2.72.3",
+    "serverless-localstack": "^0.4.36"
+  }
+}

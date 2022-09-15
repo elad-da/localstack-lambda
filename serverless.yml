@@ -1,0 +1,34 @@
+service: hello
+
+provider:
+  name: aws
+  runtime: go1.x
+  region: us-east-1
+  stage: local
+
+plugins:
+  - serverless-localstack
+
+package:
+  individually: true
+
+custom:
+  localstack:
+    debug: true
+    edgePort: 4566
+    autostart: false
+    stages: [local]
+    lambda:
+      mountCode: false
+
+functions:
+  hello:
+    handler: bin/main
+    events:
+      - http:
+          path: table
+          method: post
+          cors: true
+
+resources:
+  Resources:
